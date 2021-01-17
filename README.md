@@ -92,3 +92,11 @@ Tool to bruteforce Windows SIDs which will attempt to identify remote users and 
 ```
 lookipsid.py domain/user:password@10.10.10.10
 ```
+## Port Forwarding
+
+### ssh 
+
+```
+    ssh -L port_to_host:ip_address:port_to_forward user@host.com
+```
+
