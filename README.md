@@ -101,6 +101,18 @@ lookipsid.py domain/user:password@10.10.10.10
 ```
 ## Local File Inclusion (LFI) / Directory Traversal
 
+### Extension Bypass using Null byte
+
+PHP versions before 5.5 are vulnerable to null byte injection, meaning that adding a null byte at the end of the filename should bypass the extension check.  
+It can bypass codes that append `.php` to the file requested
+
+Example:
+
+`include($_GET['language'] . ".php");`
+
+`language=/etc/passwd%00` will result in `language=/etc/passwd`
+
+
 ### RCE Through Apache / Nginx Log Files
 
 Nginx log files are readable by www-data user by default  
